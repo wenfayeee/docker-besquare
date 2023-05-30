@@ -1,0 +1,15 @@
+version: "3.2"
+services:
+  php:
+    image: php:7.4-fpm
+    container_name: php-container
+    volumes:
+      - ./public_html:/var/www/html
+  apache:
+    build:
+      context: ./apache
+    ports:
+      - "8090:80"
+    container_name: apache-server
+    volumes: 
+      - ./public_html:/var/www/html
