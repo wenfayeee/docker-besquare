@@ -1,0 +1,10 @@
+version: "3.2"
+services:
+  nginx: 
+    build: 
+      context:
+    ports:
+      - "8091:80"
+    container_name: nginx_server
+    volumes:
+      - ./public_html:/usr/share/nginx/html
